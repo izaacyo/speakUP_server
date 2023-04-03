@@ -1,4 +1,14 @@
 {
+  "name": "blogdev",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "node dist/index.js",
+    "dev": "ts-node-dev backend/index.ts",
+    "build": "tsc",
+    "render-postbuild":"tsc"
+  },
   "dependencies": {
     "bcrypt": "^5.1.0",
     "cookie-parser": "^1.4.6",
@@ -28,11 +38,5 @@
     "nodemon": "^2.0.22",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.0.2"
-  },
-  "scripts": {
-    "start": "node dist/index.js",
-    "dev": "ts-node-dev backend/index.ts",
-    "build": "tsc",
-    "render-postbuild":"tsc"
   }
 }
