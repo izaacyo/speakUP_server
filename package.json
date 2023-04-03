@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "scripts": {
     "start": "node dist/index.js",
-    "dev": "npm i typescript npx ts-node backend/index.ts",
+    "dev": "npx ts-node backend/index.ts",
     "build": "tsc",
     "render-postbuild": "tsc"
   },
