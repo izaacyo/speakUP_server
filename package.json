@@ -7,7 +7,7 @@
     "start": "node dist/index.js",
     "dev": "./node_modules/.bin/ts-node-dev backend/index.ts",
     "build": "tsc",
-    "render-postbuild":"tsc"
+    "render-postbuild": "tsc"
   },
   "dependencies": {
     "bcrypt": "^5.1.0",
@@ -36,7 +36,6 @@
     "@types/node": "^18.15.10",
     "@types/nodemailer": "^6.4.7",
     "nodemon": "^2.0.22",
-    "ts-node-dev": "^2.0.0",
     "typescript": "^5.0.2"
   }
 }
