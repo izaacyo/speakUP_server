@@ -58,7 +58,7 @@ const blogCtrl = {
         },
         // array -> object
         { $unwind: "$user" },
-        // Category
+        // Subject
         {
           $lookup: {
             "from": "subjects",
@@ -71,7 +71,7 @@ const blogCtrl = {
         { $unwind: "$subject" },
         // Sorting
         { $sort: { "createdAt": -1 } },
-        // Group by category
+        // Group by Subject
         {
           $group: {
             _id: "$subject._id",
