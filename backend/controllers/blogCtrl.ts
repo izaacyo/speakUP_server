@@ -61,7 +61,7 @@ const blogCtrl = {
         // Category
         {
           $lookup: {
-            "from": "categories",
+            "from": "category",
             "localField": "category",
             "foreignField": "_id",
             "as": "category"
@@ -308,9 +308,9 @@ const blogCtrl = {
       ])
 
       if(!blogs.length)
-        return res.status(400).json({msg: 'No Blogs.'})
+        return res.status(400).json({msg: 'No Blogs.'}) 
 
-      res.json(blogs)
+          res.json(blogs)
 
     } catch (err: any) {
       return res.status(500).json({msg: err.message})
