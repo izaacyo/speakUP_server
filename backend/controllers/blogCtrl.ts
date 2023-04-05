@@ -61,8 +61,8 @@ const blogCtrl = {
         // Category
         {
           $lookup: {
-            "from": "subject",
-            "localField": "subject",
+            "from": "subjects",
+            "localField": "subjects",
             "foreignField": "_id",
             "as": "subject"
           }
