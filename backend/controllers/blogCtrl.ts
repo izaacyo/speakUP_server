@@ -62,7 +62,7 @@ const blogCtrl = {
         {
           $lookup: {
             "from": "subjects",
-            "localField": "subjects",
+            "localField": "subject",
             "foreignField": "_id",
             "as": "subject"
           }
