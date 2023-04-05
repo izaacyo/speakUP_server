@@ -21,7 +21,7 @@ const authCtrl = {
       const { name, account, password } = req.body
 
       const user = await Users.findOne({account})
-      if(user) return res.status(400).json({msg: 'Email or Phone number already exists.'})
+      if(user) return res.status(400).json({msg: 'Email already exists.'})
 
       const passwordHash = await bcrypt.hash(password, 12)
 
