@@ -64,7 +64,7 @@ const blogCtrl = {
             "from": "subjects",
             "localField": "subjects",
             "foreignField": "_id",
-            "as": "subject"
+            "as": "subjects"
           }
         },
         // array -> object
