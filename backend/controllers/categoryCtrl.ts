@@ -61,7 +61,7 @@ const categoryCtrl = {
       return res.status(400).json({msg: "Invalid Authentication."})
 
     try {
-      const blog = await Blogs.findOne({category: req.params.id})
+      const blog = await Blogs.findOne({subject: req.params.id})
       if(blog) 
         return res.status(400).json({
           msg: "Can not delete! In this category also exist blogs."

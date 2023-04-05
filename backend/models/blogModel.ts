@@ -26,7 +26,7 @@ const blogSchema = new mongoose.Schema({
     type: String,
     require: true
   },
-  category: { type: mongoose.Types.ObjectId, ref: 'category' }
+  subject: { type: mongoose.Types.ObjectId, ref: 'subject' }
 }, {
   timestamps: true
 })

@@ -20,7 +20,7 @@ const blogCtrl = {
     if(!req.user) return res.status(400).json({msg: "Invalid Authentication."})
 
     try {
-      const { title, content, description, thumbnail, category } = req.body
+      const { title, content, description, thumbnail, subject} = req.body
 
       const newBlog = new Blogs({
         user: req.user._id,
@@ -28,7 +28,7 @@ const blogCtrl = {
         content,
         description, 
         thumbnail, 
-        category
+        subject
       })
 
       await newBlog.save()
@@ -61,21 +61,21 @@ const blogCtrl = {
         // Category
         {
           $lookup: {
-            "from": "category",
-            "localField": "category",
+            "from": "subject",
+            "localField": "subject",
             "foreignField": "_id",
-            "as": "category"
+            "as": "subjecty"
           }
         },
         // array -> object
-        { $unwind: "$category" },
+        { $unwind: "$subject" },
         // Sorting
         { $sort: { "createdAt": -1 } },
         // Group by category
         {
           $group: {
-            _id: "$category._id",
-            name: { $first: "$category.name" },
+            _id: "$subject._id",
+            name: { $first: "$subject.name" },
             blogs: { $push: "$$ROOT" },
             count: { $sum: 1 }
           }
@@ -108,7 +108,7 @@ const blogCtrl = {
             totalData: [
               { 
                 $match:{ 
-                  category: new mongoose.Types.ObjectId(req.params.id) 
+                  subject: new mongoose.Types.ObjectId(req.params.id) 
                 } 
               },
               // User
@@ -133,7 +133,7 @@ const blogCtrl = {
             totalCount: [
               { 
                 $match: { 
-                  category: new mongoose.Types.ObjectId(req.params.id) 
+                  subject: new mongoose.Types.ObjectId(req.params.id) 
                 } 
               },
               { $count: 'count' }

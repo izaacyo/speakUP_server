@@ -64,6 +64,6 @@ export interface IBlog extends Document{
   content: string
   description: string
   thumbnail: string
-  category: string
+  subject: string
   _doc: object
 }
