@@ -10,6 +10,7 @@ Build with :
 - MongoDB
 - Express
 - NodeJS
+- Socket.io
 
 Hosted on :
 - Render https://speakup-server.onrender.com/
