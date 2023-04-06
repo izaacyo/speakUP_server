@@ -12,7 +12,7 @@ Build with :
 - NodeJS
 
 Hosted on :
-- Heroku - previously, now on Render
+- Render https://speakup-server.onrender.com/
 
 ## Setup and usage : 
 - Clone the repository
